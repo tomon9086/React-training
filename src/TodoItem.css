@@ -1,0 +1,7 @@
+.todo-item {
+	cursor: pointer;
+	user-select: none;
+}
+.todo-item-done {
+	color: #CCC;
+}
