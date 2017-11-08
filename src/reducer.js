@@ -1,7 +1,7 @@
 const Redux = require("redux")
 
 const initState = {
-	todos: [ { id: 0, done: true, text: "hoge" }, { id: 1, done: false, text: "hogehoge" } ]
+	todos: [ { id: 0, done: false, text: "hoge" }, { id: 1, done: false, text: "hogehoge" } ]
 }
 
 let id = initState.todos.length
@@ -18,11 +18,11 @@ const todo = (state = initState, action) => {
 		case "toggle-done":
 			newState = {}
 			newState.todos = state.todos.map((v, i) => {
-				const item = v
+				const item = { ...v }
 				if(v.id === action.id) item.done = !item.done
 				return item
 			})
-			console.log(newState)
+			// console.log(newState)
 			return newState
 		default:
 			return state

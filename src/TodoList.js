@@ -6,13 +6,15 @@ const toggleDone = require("./actions.js").toggleDone
 const TodoItem = require("./TodoItem.js")
 const AddItem = require("./AddItem.js")
 
+require("./TodoList.css")
+
 class TodoList extends React.Component {
 	constructor(props) {
 		super(props)
 	}
 	render() {
 		return (
-			<div>
+			<div className="list-container">
 				{this.props.todos.map((v, i) => (
 					<TodoItem key={ v.id } item={ v } onClick={ toggleDone }></TodoItem>
 				))}
